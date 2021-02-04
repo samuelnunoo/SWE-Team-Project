@@ -1,0 +1,34 @@
+P1A.1 Project Description
+Rose Didcock (rdidcock@g.hmc.edu) , Samuel Nunoo (sana2018@mymail.pomona.edu) , Evan Von Oehsen (eavb2018@mymail.pomona.edu) 
+The product we’re proposing is a document editor web application that allows developers and professionals to organize and intertwine related content in a way that is flexible and intuitive. More specifically, documents will contain chunks of text/data that can be flexibly laid out, categorized, and given custom attributes. These categorized data chunks will support powerful search, sorting, filtering, and grouping capabilities, providing a more granular search scope than just documents, with relevant sections/excerpts able to be found on their own. Elements of the document will link them to similar content for ease of access. This feature will allow users to search for documents in numerous ways, and maximize organizational efficiency. For a developer, this makes finding and intertwining related documentation much easier, without having to dig for small pieces of relevant info buried within long documents.
+Gearing our technology towards developers, we want to prioritize productivity. Our tool will allow for quick and easy search and find of documents. By classifying the documents and using templated embedded cards, the user can store their data in an organized and structured way. As a productivity tool, our technology will support quick queries, while the user is interacting with a simple and beautiful interface that makes organization easy. While in the long term we may want to expand the scope of users and make it more accessible for all kinds of purposes, we initially want to build it as a tool for developers; as developers ourselves, we identified a need for a way to cut out some of the hassle it takes organizing many different stacks and their documentation in a way that makes sense and is easy to navigate. We want to expand on existing software in an innovative way, using the embedded cards to improve on technologies we have tried and wanted more from.
+The initial step in our design process will be to hammer out which requirements we want to address in our MVP, based on the target users of developers and any gaps we find in our competitive research. While we fit into this target audience ourselves, our process would benefit greatly from including interviews with other developers, to ensure we are on the right track. We’ll then begin designing the interface in Figma. Our goal will be to hash out what all the various pages and components will ideally look like in the final product, but at the very least have something to suffice as a reference point and a chance to ensure we are all on the same page with our vision for the final product. Alongside our interface designs, we’ll hash out any data structures and algorithms to pair with them. Once we’ve completed these steps, we’ll be ready to build.
+The main components of this project include the front-end design of the website, the document editor, the template creator, and backend functionality include server hosting. We plan on building our tool as a web application built atop Node.js, MongoDB (with Typescript ), and Express. Libraries like Vue + Vueify will allow us to more easily create a pleasing front-end experience geared towards documentation writing,cards, and will provide the means to create a template editor. And ProseMirror will allow us to feasible create a document editor. Our version control flow will use GitHub. We will test our system with Jest, Postman, and Storybook. The web application will be hosted on Heroku.  See Appendix for more details.
+Appendix 
+Technology
+Rationale
+Node.js
+Popular Language for WebApps with extensive libraries and community support
+Vue and Vuetify 
+Popular Frontend libraries which allows for beautiful UI designs with little technical overhead 
+Docker
+Allows for OS-neutral, easily reproducible dev environments, reducing Host specific bugs.
+Git and GitHub
+Git for Version Control and GitHub to allow for remote collaboration on project
+MongoDB
+No-SQL Database that has excellent scaling capabilities in a Microservice environment and would work nicely with the polymorphic data structure requirements of the app
+TypeScript
+Superset of Javascript that will significantly reduce development time by providing static typing
+Express.js
+Popular library for developing Web Applications with extensive and intuitive tutorials will help reduce overhead and ensure we follow industry standards
+Prosemirror 
+Flexible library for creating documentation editors that will allow for the creation of card templates 
+Webpack
+Module Bundler to compose Typescript node applications into a single file
+Jest
+Simplistic test framework for node to allow for easy and flexible unit tests 
+Storybook
+UI Testing framework that will allow for easy testing and development of UI Components 
+Postman
+Utility that will make it easy to test routes
+
