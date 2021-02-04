@@ -1,6 +1,14 @@
-Meeting 2/3/2021 
-	Goal: Plan ahead for this weeks deliverables 
-	Tasks for the week: Competitive research tasks
-	Concerns: should plan ahead for the requirements tasks since they are long and there are many
-	Estimated time: 15 min 
-	Notes: 
+Meeting   2/3/2021 
+
+Scribe: Rose
+Members: Evan, Samuel, Rose 
+Agenda: Task Distribution
+
+Notes
+Task Breakdown: 
+Samuel leads research and compiling competitors, Evan and Rose do some work on research to fill in gaps
+Research on competitors due in lab on Friday to be discussed, then Rose can do the rough draft of the write-up, to be reviewed as a group and edited on Sunday and communicated about through Facebook Messenger when questions and concerns arise
+Evan will start on the tasks for next week for the Requirements, starting with identifying and characterizing users then after a rough draft, reviewing before moving on to the initial requirements list.
+The tasks for next week have a soft due date of sunday night as well, so we can get an early start next week
+Need to create google drive to organize use of google docs
+
