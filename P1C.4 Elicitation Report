@@ -1,0 +1,46 @@
+Team: 
+Members: Rose Didcock, Evan Von Oehsen, Samuel Nunoo
+Project: 1C.4 Elicitation Report
+	Elicitation report: samuelnunoo/SWE-Team-Project (github.com)
+Primary Author: Rose 
+
+
+
+Scribe Summary Report (Reorganized information from note-taking and Prof Kampe’s supplements)
+
+This session took place over the class Zoom at 11:00PST after Friday lab (2/12/2021). Our team, Samuel, Evan, and Rose were all present, as well as Prof Kampe. Our panelists are as follows in the table, with some general information about their user profiles acquired in introductions:
+
+Panel Member 
+Major 
+Career Interest 
+Annagrace Hamson
+Engineering HMC
+Signal processing 
+Rosey Sams 
+Engineering HMC
+Go into Biotech, biomedical engineering
+Kevin Ayala
+CS Pomona 
+Software engineering
+Pavle Rohalj
+CS Pomona
+Software engineering 
+Alex Fay 
+CS Applied Math Pomona 
+Robotics 
+
+	Our open ended information gathering focused on the data storage needs and current methods of our potential users, the successes and frustrations they have experienced with other tools in the product space (productivity and organizational tools), and well has their project management and other needs.
+Open-Ended Information Gathering
+	Our panelists shared a variety of technologies they employ and had previously employed in data organization and task management. The kinds of data they stored was even different, ranging from notes and tasks to meeting times to computer vision images. It was interesting to see that despite having different experiences, data, and needs, many of our panelists could agree on features they wanted to see, and things that had frustrated them in their past experiences. While it was sometimes difficult to extract the information we needed from our panel, as our topic required extra digging to get what we wanted, the experiences and information shared by the panel were relevant and useful to the problem we are trying to solve. We even had panelists that had some experience with some of the competitive technologies (AirTable), and his sentiments echoed what we had experienced in our past usage, which was really great to hear. 
+New Requirements and User Suggestions 
+A new requirement that was introduced (specifically by panel members Annagrace Hamson and Kevin Ayala) is the ability to index hand-written notes to access specific information within a larger lecture, for example. The ability to translate handwritten notes to text effectively might be slightly out of the scope of this project, but this introduces the idea of categorizing sections of a document, potentially implemented through tagging the media item in different locations for easier user search. 
+Another new requirement that was suggested and affirmed by a large majority of the panel is the need for a new technology to be quick to pick up. Our panelists stressed that they are inclined to drop a new tool if it takes as little as 5 minutes to get started in. This also indicated a need for seamless transfer of data from other tools, quick integration with other platforms so the user has to waste less time transferring their data. This is clearly a very important feature, as it was the most emphasized shared sentiment of the meeting. It also introduces a similarly important feature that goes hand in hand with it, clear and easy-to-read documentation. 
+Version control as a requirement was also suggested, where the user (specifically Alex Fay) expressed a need for tracking changes within the documents/data, as well as interaction with them. This is an important feature organizationally, where items that are linked in some way to allow users to know when documents they are working on have dependencies, or when documents in their organizational structure become obsolete and never referenced or visited. This leads into some of our previously gathered requirements.
+Input on Previously Gathered Requirements
+Creating a web (such as in Roam Research discussed by Rosey Sams) where items are linked in some way to allow users to know when documents they are working on have dependencies, or when documents in their organizational structure become obsolete and never referenced or visited. This is very similar to our requirement of the capability to categorize and tag information, but adds the element of linking technologies with dependencies and other connections. 
+Previous frustrations with rigid and limiting templates in other technologies emphasized one of our previous requirements, the ability for the user to build their own template, and incorporate mixed media into the system such as documents with rich text, images and scans of handwritten notes
+Another requirement that we had previously discussed was a simple user interface. The panel indicated that they enjoyed simple interfaces, and those that were too flashy distracted from the work they were attempting to do, defeating the purpose. A clean, professional and simple interface would allow the users to focus on the task at hand without being overwhelmed by purely cosmetic features. 
+While the conversation also touched on trouble finding their information, most of the tools already employed by our panel allowed for acceptable nesting of information as an organizational method, limited mostly by the issues finding specific information within handwritten notes or scanned documents. 
+Other Results 
+Our panel emphasized the scope of our problem, where there are contrasting needs for complexity and simplicity. We need to focus on finding a balance between the two, where functionality is complex enough that our users can have all the capabilities they require, but it is still easy and quick to set up and use. Thus we also need to consider what we are going to be able to accomplish, and who we can satisfy, potentially sacrificing some complexity to satisfy a broader user class, or by contrast, focusing on features but sacrificing user experience and even losing users due to wasting their time. This meeting also allowed us to identify some of the core requirements in a productivity app in a very rough sense, where we can build from there, starting with the features that will satisfy the most common needs. The most common function that our users discussed was the ability to keep notes and tasks to maximize productivity. This can help us narrow down the functionalities that we will implement in the future, potentially choosing to tailor to the information storage and organization of note-taking and task-management. 
+We also realized that, given the scope of this project and the timeline of the semester, achieving a product that can even scratch the surface of satisfying the basic needs underscored by the panel will be a serious undertaking, and might even be considered unrealistic. We will need to prioritize both the requirements that would fit the desires of the panel, but also ensure we have a manageable scope of what we can actually build.
