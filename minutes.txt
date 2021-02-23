@@ -56,3 +56,16 @@ Members: Samuel, Rose, Evan
 
 Delegating tasks for the final report, determined who is in charge of what section (shown in management plan)
 Determined reponsibilities for editing over the weekend: Rose on Post-Mortem Report from scribe notes taken in meeting, planned for friday, Evan on the final report edits
+
+
+Meeting 2/23/21
+Scribe: Rose
+Members: Samuel, Rose, Evan 
+
+Short planning meeting for the week
+Decided to use notion for our deliverables, export for final submission with a link
+Management plan for Friday 
+Samuel creating list of tasks for this week
+Rose start list of tasks for the semester to add to management plan. 
+Adding to the notion for Architecture planning- adding software components
+Concerns with time crunch for this week, need to digest the instructions more 
