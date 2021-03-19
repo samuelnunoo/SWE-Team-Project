@@ -1,0 +1,85 @@
+Meeting 2/23/21 (Tuesday)
+Scribe: Rose
+Members: Samuel, Rose, Evan 
+
+Short planning meeting for the week
+Decided to use notion for our deliverables, export for final submission with a link
+Management plan for Friday 
+Samuel creating list of tasks for this week
+Rose start list of tasks for the semester to add to management plan. 
+Adding to the notion for Architecture planning- adding software components
+Concerns with time crunch for this week, need to digest the instructions more
+
+Meeting 2/24/21 (wednesday)
+Scribe: Rose
+Members: Samuel, Rose, Evan
+
+Meeting to discuss significant amount of work for the week, create plan for dividing the work.
+Set tasks to complete initial task from project description so we have something to show Prof Kampe
+Rose is delegated the management plan
+Samuel needs to finish his preliminary component list by Thursday night so that Evan can draw up diagrams before lab Friday
+Stay in contact over messenger, Rose and Evan can take on component descriptions where needed.
+
+Meeting 2/26/21 (Friday in Lab)
+Scribe: Rose 
+Members: Rose, Samuel, Evan 
+
+Went over architecture in lab with Prof Kampe, lots of things to work on, further consider, and work to do on the write up
+Samuel is taking lead of document, agreeing in advance to take a slip day to make sure we can can work the architecture out completely before submitting
+Evan and Rose decide to meet at 3 later in the day to delegate tasks, Samuel is busy so we will inform him over messenger
+
+Notes from later meeting with Evan and Rose 
+  We each will perform one in depth component analysis, then split up the remaining components due by Saturday 6pm
+  then we can work together on the document in a meeting saturday, split up remaining tasks, and meet again for review sunday
+  
+Meeting 2/27/21 (Saturday)
+Scribe: Evan 
+Members: Evan, Samuel 
+
+Rose was unable to make this meeting due to failing to consider LA traffic into a trip
+We met to discuss and talk through certain part of the architecture
+Meeting Sunday morning will delegate the rest of the work and provide time to make sure were all on the same page
+slip day turn in alleviates some of the pressure better to make sure were all up to date. 
+
+Meeting 2/28/21 (Sunday)
+Scribe: Rose
+Members: Rose, Samuel, Evan
+
+First meeting we were talking through the architecture diagrams together, making sure we all were understood, talked through data types
+talked through the overall structure by building the miro diagrams together
+
+Met later after a break due to a conflicting meeting to delegate sections, each work individually for overall review by Samuel before submission
+Final review of management plan before submission
+
+Meeting 3/05/21 (Friday in Lab)
+Scribe: Rose
+Members: Samuel, Evan, Rose 
+
+Went over written feedack on preliminary architecture
+Got a lot of feedback on our architecture from Prof Kampe by calling him into break out room to discuss
+Discussed potential times for future meetings over weekend and delegation of work, difficulut with spring break and midterm
+
+Meeting 3/06/21 (Saturday)
+Scribe: Rose
+Members: Rose, Evan 
+
+Discussing changes to be made
+Difficulties scheduling and spring break travel made making the preliminary changes from Prof Kampes comments as a group difficult
+Rose is going to take on initial reworking of written sections for clarity before camping
+Samuel sent task breakdown in messenger, delegated sections to fix up between Samuel and evan (keep track of who is doing and finishes what in messenger)
+
+Meeting 3/13/21 (Saturday)
+Scribe: Rose 
+Members: Evan, Samuel, Rose
+
+This was the meeting where our architecture was reviewed by round up
+
+Meeting 3/14/21 (Sunday)
+Scribe: Rose 
+Members: Evan, Rose, Samuel
+
+We first met for 30 minutes to discuss our notes on the architecture and how we wanted to conduct the meeting
+
+Then we conducted our review for FridgeMaster
+
+
