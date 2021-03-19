@@ -82,4 +82,11 @@ We first met for 30 minutes to discuss our notes on the architecture and how we 
 
 Then we conducted our review for FridgeMaster
 
+Meeting 3/19/21 (Friday in lab) 
+Scribe: Rose 
+Members: Evan, Rose, Samuel
+
+Post Mortem Meeting
+Followed by delegation of tasks to work on in architecture revision and other (updating management plan)
+Planned meeting Sunday at 11 to go over final deliverables
 
