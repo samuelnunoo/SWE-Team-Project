@@ -1,0 +1,11 @@
+Meeting 3/26/21 (Friday)
+Scribe: Evan
+Members: Samuel, Rose, Evan 
+
+Short planning meeting for the weekend, since lab was off this week
+Decided Evan will take on the api-related component
+Samuel guided us through template creator related code for Rose
+Discussed the difficulty of making the template creator component, determined it will be a lot of work for arguably nonessential functionality
+Decided to just make one or two base templates for now
+Rose to set up the tasks in the management plan today (Friday)
+All to sync over messenger and meet on Sunday to touch base on P3A progress
