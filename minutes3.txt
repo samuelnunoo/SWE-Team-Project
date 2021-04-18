@@ -9,3 +9,24 @@ Discussed the difficulty of making the template creator component, determined it
 Decided to just make one or two base templates for now
 Rose to set up the tasks in the management plan today (Friday)
 All to sync over messenger and meet on Sunday to touch base on P3A progress
+
+
+Meeting 4/9/21 (Friday)
+Scribe: Rose
+Members: Samuel, Rose, Evan 
+
+Meeting for the Reviews of our component deliverables. Left 30 minutes for each review intially, which proved not to be enough, each took about 40. Finished the first 2 review meetings, of Evan's then Samuel's component, then moved onto setting a time to do the third meeting. Decided on Sunday at 10:30 to give Samuel enough time to still write his review report after the meeting.
+
+
+Meeting 4/11/21 (Sunday)
+Scribe: Rose
+Members: Samuel, Rose, Evan 
+
+Component review of Rose's Editor Component. 
+
+
+Meeting 4/18/21 (Sunday)
+Scribe: Rose
+Members: Samuel, Rose, Evan 
+
+Post Mortem meeting. Also clarified a few issues on final component deliverables, came up with a plan to keep the data converter as part of Rose's but have agreed to be flexible later on, after potetially receiving feedback from Prof Kampe or seeing how things go, since we could also see it fitting well in the API layer. 
