@@ -6,7 +6,7 @@
   "author": "Rose, Evan, Samuel",
   "license": "MIT",
   "scripts": {
-    "jest": "jest",
+    "test": "jest",
     "start-frontend": ".",
     "start-backend": ". ",
     "start": " front back",
