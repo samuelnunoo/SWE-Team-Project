@@ -6,6 +6,7 @@
   "author": "Rose, Evan, Samuel",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.17.1",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1"
   },
@@ -16,7 +17,7 @@
   },
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
-    "pretest": "cross-env NODE_ENV=test npm run migrate:reset"
+    "pretest": "cross-env NODE_ENV=test"
   },
   "jest": {
     "testEnvironment": "node",
