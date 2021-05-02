@@ -1,19 +1,11 @@
-exports.createNode(query) = async () => {
+exports.createNode = async (query) => {
   return new Promise((resolve) => {
     resolve(
       "This function has not been implemented yet. Please mock for unit testing"
     );
   });
 };
-exports.getNode(id) = async () => {
-  return new Promise((resolve) => {
-    resolve(
-      "This function has not been implemented yet. Please mock for unit testing"
-    );
-  });
-};
-
-exports.getNodes(query) = async () => {
+exports.getNode = async (id) => {
   return new Promise((resolve) => {
     resolve(
       "This function has not been implemented yet. Please mock for unit testing"
@@ -21,7 +13,7 @@ exports.getNodes(query) = async () => {
   });
 };
 
-exports.getTemplate(id) = async () => {
+exports.getNodes = async (query) => {
   return new Promise((resolve) => {
     resolve(
       "This function has not been implemented yet. Please mock for unit testing"
@@ -29,7 +21,7 @@ exports.getTemplate(id) = async () => {
   });
 };
 
-exports.getTemplates(query) = async () => {
+exports.getTemplate = async (id) => {
   return new Promise((resolve) => {
     resolve(
       "This function has not been implemented yet. Please mock for unit testing"
@@ -37,7 +29,7 @@ exports.getTemplates(query) = async () => {
   });
 };
 
-exports.getUser(query) = async () => {
+exports.getTemplates = async (query) => {
   return new Promise((resolve) => {
     resolve(
       "This function has not been implemented yet. Please mock for unit testing"
@@ -45,7 +37,15 @@ exports.getUser(query) = async () => {
   });
 };
 
-exports.createUser(data) = async () => {
+exports.getUser = async (query) => {
+  return new Promise((resolve) => {
+    resolve(
+      "This function has not been implemented yet. Please mock for unit testing"
+    );
+  });
+};
+
+exports.createUser = async (data) => {
   return new Promise((resolve) => {
     resolve(
       "This function has not been implemented yet. Please mock for unit testing"
