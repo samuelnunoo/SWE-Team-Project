@@ -1,3 +1,7 @@
+const jwt = require("jsonwebtoken");
+
+const secretForTesting = "TypeIO";
+
 exports.getDBResultTestCase = async () => {
   return new Promise((resolve) => {
     resolve({
@@ -18,4 +22,40 @@ exports.getDBResultSuccess1 = async () => {
       content: [],
     });
   });
+};
+
+exports.getInvalidToken = () => {
+  return jwt.sign(
+    {
+      id: "12345678",
+      firstname: "Jane",
+      lastname: "Doe",
+      email: "janedoe@example.com",
+    },
+    "incorrect-secret"
+  );
+};
+
+exports.getValidTokenIncorrectUser = () => {
+  return jwt.sign(
+    {
+      id: "87654321",
+      firstname: "John",
+      lastname: "Doe",
+      email: "johndoe@example.com",
+    },
+    secretForTesting
+  );
+};
+
+exports.getValidToken = () => {
+  return jwt.sign(
+    {
+      id: "12345678",
+      firstname: "Jane",
+      lastname: "Doe",
+      email: "janedoe@example.com",
+    },
+    secretForTesting
+  );
 };

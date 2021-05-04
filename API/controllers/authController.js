@@ -1,7 +1,8 @@
-const User = require("../Data/models/userModel");
+const User = require("../../Data/models/userModel");
 jwt = require("jsonwebtoken");
 bcrypt = require("bcryptjs");
 
+const secret = "TypeIO"
 
 // Register a new user
 exports.register = (req, res) => {
@@ -36,8 +37,8 @@ exports.signIn = (req, res) => {
         } else {
           res.json({
             token: jwt.sign(
-              { email: user.email, fullName: user.fullName, _id: user._id },
-              "RESTfulAPIs"
+              { email: user.email, firstName: user.firstName, lastName: user.lastName, id: user._id },
+              secret
             ),
           });
         }
@@ -46,11 +47,19 @@ exports.signIn = (req, res) => {
   );
 };
 
-// User Register function
-exports.loginRequired = (req, res, next) => {
-  if (req.user) {
-    res.json({ message: "Authorized User, Action Successful!" });
+exports.validateToken = (req, res, next) => {
+  const token = req.headers.token
+
+  if (token) {
+    jwt.verify(token, secret, (err, user) => {
+      if (err) {
+        res.sendStatus(403).json({ message: err.message });
+      }
+
+      req.user = user;
+      next();
+    })
   } else {
-    res.status(401).json({ message: "Unauthorized user!" });
+    res.sendStatus(401).json({ message: "No auth token in header" });
   }
-};
+}

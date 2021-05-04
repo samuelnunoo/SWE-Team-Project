@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const TypeCollectionSchema = new Schema({
   name: {
     type: String,
     trim: true,
@@ -24,4 +24,4 @@ const UserSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("TypeCollection", TypeCollection);
+module.exports = mongoose.model("TypeCollection", TypeCollectionSchema);
