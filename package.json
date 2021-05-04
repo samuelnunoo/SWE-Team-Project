@@ -13,6 +13,9 @@
     "test-server": "node API/example_server.js"
   },
   "dependencies": {
+    "@tiptap/starter-kit": "^2.0.0-beta.38",
+    "@tiptap/vue-2": "^2.0.0-beta.22",
+    "@tiptap/vue-3": "^2.0.0-beta.27",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jest": "^26.6.3",

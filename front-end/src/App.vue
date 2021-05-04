@@ -1,35 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <editor-content :editor="editor" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-const axios = require('axios')
+import { Editor, EditorContent } from '@tiptap/vue-2'
+import { defaultExtensions } from '@tiptap/starter-kit'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    EditorContent,
   },
+
+  data() {
+    return {
+      editor: null,
+    }
+  },
+
   mounted() {
-
-   axios("http://localhost:8000").then( res => {
-      console.log(res)
+    this.editor = new Editor({
+      content: '<p>I’m running tiptap with Vue.js. 🎉</p>',
+      extensions: defaultExtensions(),
     })
+  },
 
-
-  }
+  beforeDestroy() {
+    this.editor.destroy()
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
