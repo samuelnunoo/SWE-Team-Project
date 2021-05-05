@@ -150,6 +150,73 @@ describe("4: GET /api/nodes", () => {
   });
 });
 
+describe("5: POST /api/nodes", () => {
+  it("Request with invalid node in body responds 400", async () => {
+    const headerValidToken = { token: testHelper.getValidToken() };
+    db.createNode.mockImplementationOnce(testHelper.mockCreateNodeFail);
+    await supertest(app)
+      .post("/api/nodes")
+      .set(headerValidToken)
+      .send(testHelper.getMockNodeData())
+      .expect(400);
+  });
+  it("Request with valid node responds 200 new node in body", async () => {
+    const headerValidToken = { token: testHelper.getValidToken() };
+    db.createNode.mockImplementationOnce(testHelper.mockCreateNode);
+    await supertest(app)
+      .post("/api/nodes")
+      .set(headerValidToken)
+      .send(testHelper.getMockNodeData())
+      .expect(200)
+      .then((res) => {
+        expect(res.body).toHaveProperty("_id");
+        expect(res.body).toHaveProperty("owner");
+      });
+  });
+});
+
+describe("6: GET /api/nodes/:id", () => {
+  it("Request with valid node id responds 200", async () => {
+    const headerValidToken = { token: testHelper.getValidToken() };
+    db.getNode.mockImplementationOnce(testHelper.mockGetNode);
+    await supertest(app)
+      .get(`/api/nodes/${testHelper.getTestNodeID()}`)
+      .set(headerValidToken)
+      .send()
+      .expect(200)
+      .then((res) => {
+        expect(res.body._id).toEqual(testHelper.getTestNodeID());
+        expect(res.body).toHaveProperty("title");
+      });
+  });
+  it("Request with invalid node id responds 404", async () => {
+    const headerValidToken = { token: testHelper.getValidToken() };
+    db.getNode.mockImplementationOnce(testHelper.mockGetNodeFail);
+    await supertest(app)
+      .get(`/api/nodes/${testHelper.getTestNodeID()}`)
+      .set(headerValidToken)
+      .send()
+      .expect(404);
+  });
+});
+
+describe.skip("7: PUT /api/nodes/:id", () => {
+  
+});
+
+describe.skip("8: DELETE /api/nodes/:id", () => {
+  
+});
+
+describe.skip("9: GET /api/typeCollections", () => {
+  
+});
+
+describe.skip("10: GET /api/typeCollections/:id", () => {
+  
+});
+
+
 // describe("GET /api/testobject - get a test object by id", () => {
 //   it.skip("should create a new post", async () => {
 //     db.getNode.mockImplementationOnce(() => getDBResultTestCase());

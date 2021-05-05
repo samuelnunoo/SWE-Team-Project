@@ -1,4 +1,3 @@
-const jwt = require("jsonwebtoken");
 const express = require("express");
 const app = express();
 const authHandlers = require("./controllers/authController");
@@ -7,32 +6,20 @@ const nodeHandlers = require("./controllers/nodeController");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app
-  .route("/api/nodes/:id")
-  .get(authHandlers.validateToken, (req, res) => {
-    res.sendStatus(200)
-  })
-  .put(authHandlers.validateToken)
-  .delete(authHandlers.validateToken);
+app.route("/api/auth/signup").post(authHandlers.register);
+
+app.route("/api/auth/signin").post(authHandlers.signIn);
 
 app
   .route("/api/nodes")
-  .get(authHandlers.validateToken,nodeHandlers.getNodes)
-  .post(authHandlers.validateToken)
-  .delete(authHandlers.validateToken);
+  .get(authHandlers.validateToken, nodeHandlers.getNodes)
+  .post(authHandlers.validateToken, nodeHandlers.postNode);
 
 app
-  .route("/api/auth/signup")
-  .post(authHandlers.register)
-
-app.route("/api/auth/signin")
-  .post(authHandlers.signIn)
-
-
-
-
-
-
+  .route("/api/nodes/:id")
+  .get(authHandlers.validateToken, nodeHandlers.getNode)
+  .put(authHandlers.validateToken)
+  .delete(authHandlers.validateToken);
 
 // ------ a test endpoint for reference ------
 // app.get("/api/testobject/:id", async (req, res) => {
@@ -51,6 +38,5 @@ app.route("/api/auth/signin")
 //     res.status(200).send(post);
 //   });
 // });
-
 
 module.exports = app;

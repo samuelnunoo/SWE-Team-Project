@@ -1,21 +1,34 @@
 const db = require("../../Data/databaseAbstraction");
+const  NUM_DEFAULT_NODES = 50
 
 exports.getNodes = (req, res) => {
-  const maxItems = parseInt(req.query.max) || 50
-  db.getNodes(req.body, req.user.id, maxItems).then((nodes) => {
-    res.status(200).json(nodes)
-  }).catch((err) => {
-    console.log(err)
-    res.status(500).send(err)
-  });
+  const maxItems = parseInt(req.query.max) || NUM_DEFAULT_NODES;
+  db.getNodes(req.body, req.user.id, maxItems)
+    .then((nodes) => {
+      res.status(200).json(nodes);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send(err);
+    });
 };
 
 exports.getNode = (req, res) => {
-    db.getNode(req, req.user.id, (err, nodes) => {
-      if (err) {
-          res.status(500).send(err)
-      }
-      res.status(200).json(nodes)
+  db.getNode(req.params.id, req.user.id)
+    .then((nodes) => {
+      res.status(200).json(nodes);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
     });
-  };
+};
 
+exports.postNode = (req, res) => {
+  db.createNode(req.body, req.user.id)
+    .then((node) => {
+      res.status(200).json(node)
+    })
+    .catch((err) => {
+      res.status(400).send(err)
+    })
+};

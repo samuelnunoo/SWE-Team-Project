@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const mongoose = require("mongoose");
 const User = require("../../Data/models/userModel");
 
 const secretForTesting = "TypeIO";
@@ -107,3 +106,42 @@ exports.mockGetNumNodes = async (query, userID, count) => {
     })
   );
 };
+
+exports.getMockNodeData = () => {
+  return {
+    title: "Node Title",
+    type: "Document",
+    content: {},
+  }
+}
+
+exports.mockCreateNode = async (data, userID) => {
+  let node = data;
+  node.owner = userID;
+  node._id = "1234567890FOO"
+  return Promise.resolve(
+    node
+  )
+}
+
+exports.mockCreateNodeFail = async (data, userID) => {
+  return Promise.reject()
+}
+
+exports.mockGetNode = async (id, userID) => {
+  return Promise.resolve({
+    _id: id,
+    owner: userID,
+    title: "Node Title",
+    type: "Document",
+    content: {},
+  })
+}
+
+exports.mockGetNodeFail = async (id, userID) => {
+  return Promise.reject()
+}
+
+exports.getTestNodeID = () => {
+  return "test-node-id-1234567890"
+}
