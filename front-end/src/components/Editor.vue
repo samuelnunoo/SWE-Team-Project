@@ -19,7 +19,7 @@ export default {
 
   mounted() {
     this.editor = new Editor({
-      content: '<p>I’m running tiptap with Vue.js. 🎉</p>',
+      content: '<p>Hello</p>',
       extensions: defaultExtensions(),
     })
   },
