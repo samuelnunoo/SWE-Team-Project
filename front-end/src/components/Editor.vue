@@ -6,6 +6,7 @@
 import { Editor, EditorContent } from '@tiptap/vue-2'
 import { defaultExtensions } from '@tiptap/starter-kit'
 
+
 export default {
   components: {
     EditorContent,
@@ -19,19 +20,24 @@ export default {
   },
 
   methods: {
-    save() {
+    saveDocument() {
       // get JSON from editor instance
       if (this.editor) {
         const editorJSON = this.editor.getJSON()
         // @todo replace placeholder
         ClientAPI.update(documentID, editorJSON)
       }
+    },
+    
+    loadDocument() {
+
     }
+
   },
 
   mounted() {
     this.editor = new Editor({
-      content: '<p>Hello</p>',
+      content: '<p>Hello</p>',   // @todo have it load in content from document
       extensions: defaultExtensions(),
       documentID: this.$route.query.documentID
     })
@@ -40,5 +46,7 @@ export default {
   beforeDestroy() {
     this.editor.destroy()
   },
+
+  
 }
 </script>
