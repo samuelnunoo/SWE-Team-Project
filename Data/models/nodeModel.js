@@ -28,7 +28,15 @@ const NodeSchema = new Schema({
   },
   Content: {
     type: Object,
-  }
+  },
+  createdOn: {
+    type: Date,
+    default: Date.now,
+  },
+  lastUpdate: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 module.exports = mongoose.model("Node", NodeSchema);

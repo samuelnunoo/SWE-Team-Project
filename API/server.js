@@ -1,13 +1,11 @@
 const jwt = require("jsonwebtoken");
 const express = require("express");
 const app = express();
-const db = require("../Data/databaseAbstraction");
 const authHandlers = require("./controllers/authController");
+const nodeHandlers = require("./controllers/nodeController");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-
 
 app
   .route("/api/nodes/:id")
@@ -19,18 +17,16 @@ app
 
 app
   .route("/api/nodes")
-  .get(authHandlers.validateToken)
+  .get(authHandlers.validateToken,nodeHandlers.getNodes)
   .post(authHandlers.validateToken)
   .delete(authHandlers.validateToken);
 
+app
+  .route("/api/auth/signup")
+  .post(authHandlers.register)
 
-
-
-
-
-
-
-
+app.route("/api/auth/signin")
+  .post(authHandlers.signIn)
 
 
 

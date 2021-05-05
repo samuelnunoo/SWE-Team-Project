@@ -1,4 +1,6 @@
 const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
+const User = require("../../Data/models/userModel");
 
 const secretForTesting = "TypeIO";
 
@@ -57,5 +59,51 @@ exports.getValidToken = () => {
       email: "janedoe@example.com",
     },
     secretForTesting
+  );
+};
+
+exports.getDummySignupData = () => {
+  return {
+    email: "janedoe@example.com",
+    password: "Password!1",
+    firstName: "Jane",
+    lastName: "Doe",
+  };
+};
+
+exports.getDummyLoginData = () => {
+  return {
+    email: "janedoe@example.com",
+    password: "Password!1",
+  };
+};
+
+exports.mockPromiseReject = async () => {
+  return Promise.reject();
+};
+
+exports.mockPromiseResolve = async () => {
+  return Promise.resolve();
+};
+
+exports.findUserMockPromiseResolve = async () => {
+  return Promise.resolve(
+    new User({
+      email: "janedoe@example.com",
+      hash_password: "xxxxxxxxxx",
+      firstName: "Jane",
+      lastName: "Doe",
+    })
+  );
+};
+
+exports.mockGetNumNodes = async (query, userID, count) => {
+  return Promise.resolve(
+    new Array(count).fill({
+      title: `Document in group of ${count}`,
+      type: "Document",
+      owner: userID,
+      content: {},
+    })
   );
 };
