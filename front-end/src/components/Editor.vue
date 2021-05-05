@@ -14,6 +14,18 @@ export default {
   data() {
     return {
       editor: null,
+      documentID: null
+    }
+  },
+
+  methods: {
+    save() {
+      // get JSON from editor instance
+      if (this.editor) {
+        const editorJSON = this.editor.getJSON()
+        // @todo replace placeholder
+        ClientAPI.update(documentID, editorJSON)
+      }
     }
   },
 
@@ -21,6 +33,7 @@ export default {
     this.editor = new Editor({
       content: '<p>Hello</p>',
       extensions: defaultExtensions(),
+      documentID: this.$route.query.documentID
     })
   },
 

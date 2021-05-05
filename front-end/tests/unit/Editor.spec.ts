@@ -6,6 +6,6 @@ describe('Editor.vue', () => {
     it('can recognize default text', () => {
       const wrapper = mount(EditorV)
     
-      expect(wrapper.vm.$data.editor.getHTML()).toBe('<p>Hello2</p>')
+      expect(wrapper.vm.$data.editor.getHTML()).toBe('<p>Hello</p>')
     })
   })
