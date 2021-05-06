@@ -89,7 +89,7 @@ exports.mockPromiseReject = async () => {
 };
 
 exports.mockPromiseResolve = async () => {
-  return Promise.resolve();
+  return Promise.resolve(this.getDummySignupData());
 };
 
 exports.findUserMockPromiseResolve = async () => {

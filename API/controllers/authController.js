@@ -23,13 +23,10 @@ exports.register = async (req, res) => {
   db.createUser(user)
     .then((success, err) => {
       if (err) {
-        console.log(err)
         res.status(409).send({ message: err });
       } else {
-        console.log("success")
         res.status(201).json(success);
       }
-      // user.hash_password = undefined;
     })
     .catch((err) => {
       res.status(409).send({ message: err });

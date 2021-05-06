@@ -7,10 +7,6 @@ const bcrypt = require("bcryptjs");
 jest.mock("../../Data/databaseAbstraction");
 jest.mock("bcryptjs");
 
-// beforeEach(() => {methods:
-//   db.mockClear();
-// });
-
 describe("1: Valid token is required for GET/PUT/POST operations on private resources", () => {
   it("GET /api/nodes/:id without token in request responds 401", async () => {
     await supertest(app).get("/api/nodes/1").send().expect(401);
