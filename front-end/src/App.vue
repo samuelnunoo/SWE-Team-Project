@@ -1,32 +1,47 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<v-app>
+    <!-- Nav Bar -->
+    <v-app-bar
+      dark>
+      <!-- IMG -->
+      <v-spacer/>
+      <!-- Login Button -->
+      <v-btn
+        to="/login"
+        text>
+        Login
+      </v-btn>
+      <!-- SignUp Button -->
+      <v-btn
+        text>
+        Sign Up
+      </v-btn>
+    </v-app-bar>
+  <v-main>
+    <!-- Splash Screen -->
+    <v-parallax
+      dark
+      height="700"
+      src="https://images.unsplash.com/photo-1618438974496-015b1fb3e2d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1944&q=80"
+    >
+      <v-row
+        align="center"
+        justify="center"
+      >
+        <v-col class="text-center">
+          <h1> Type.io </h1>
+          <h4> Simplicity and Power </h4>
+          <v-btn> Sign-Up </v-btn>
+        </v-col>
+      </v-row>
+    </v-parallax>
+  </v-main>
+</v-app>
 </template>
+<script lang="ts">
+import Vue from 'vue'
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default Vue.extend({
+  name: 'Home'
+})
+</script>
