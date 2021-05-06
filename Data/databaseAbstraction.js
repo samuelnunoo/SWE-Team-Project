@@ -20,7 +20,7 @@ exports.getNodes = async (query, userID, count) => {
   let usrModifiedQuery = query;
   usrModifiedQuery.owner = userID;
   return Node.find(usrModifiedQuery)
-    .sort("lastUpdate", -1)
+    .sort([["lastUpdate", -1]])
     .limit(count)
 
 };
@@ -75,7 +75,7 @@ exports.deleteNode = async (nodeID, userID) => {
 
 exports.getTypeCollections = async (query, count) => {
   return TypeCollection.find(query)
-    .sort("lastUpdate", -1)
+    .sort(["lastUpdate", -1])
     .limit(count)
 
 };
