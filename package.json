@@ -21,7 +21,7 @@
   },
   "scripts": {
     "test": "jest --testTimeout=10000",
-    "dev": "nodemon API/index"
+    "start-dev": "nodemon API/index"
   },
   "jest": {
     "testEnvironment": "node",

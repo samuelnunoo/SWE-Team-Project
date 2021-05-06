@@ -5,9 +5,11 @@ const { db } = require("./models/userModel");
 bcrypt = require("bcryptjs");
 
 exports.createUser = async (userData) => {
+  console.log(userData)
   let newUser = new User(userData);
   newUser.hash_password = bcrypt.hashSync(userData.password, 10);
   console.log(`checkpoint: ${newUser}`)
+  console.log(newUser)
   return newUser.save()
 };
 

@@ -25,7 +25,7 @@ exports.register = async (req, res) => {
       if (err) {
         res.status(409).send({ message: err });
       } else {
-        res.status(201).json(success);
+        res.status(201).send({message: "Signup successful"});
       }
     })
     .catch((err) => {
@@ -47,7 +47,7 @@ exports.signIn = (req, res) => {
             .status(401)
             .send({ message: "Authentication failed. Incorrect password." });
         } else {
-          res.status(200).send({ token: generateWebToken(user)});
+          res.status(200).json({ token: generateWebToken(user)});
         }  
       }
     })
