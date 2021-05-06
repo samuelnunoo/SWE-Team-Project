@@ -2,6 +2,11 @@ const jwt = require("jsonwebtoken");
 const User = require("../../Data/models/userModel");
 
 const secretForTesting = "TypeIO";
+const dummyUserID = "12345678";
+
+exports.getDummyUserID = () => {
+  return dummyUserID;
+};
 
 exports.getDBResultTestCase = async () => {
   return new Promise((resolve) => {
@@ -52,7 +57,7 @@ exports.getValidTokenIncorrectUser = () => {
 exports.getValidToken = () => {
   return jwt.sign(
     {
-      id: "12345678",
+      id: dummyUserID,
       firstname: "Jane",
       lastname: "Doe",
       email: "janedoe@example.com",
@@ -78,7 +83,9 @@ exports.getDummyLoginData = () => {
 };
 
 exports.mockPromiseReject = async () => {
-  return Promise.reject();
+  return Promise.reject(
+    Error("This error is being thrown by a mock function")
+  );
 };
 
 exports.mockPromiseResolve = async () => {
@@ -112,36 +119,93 @@ exports.getMockNodeData = () => {
     title: "Node Title",
     type: "Document",
     content: {},
-  }
-}
+  };
+};
 
 exports.mockCreateNode = async (data, userID) => {
   let node = data;
   node.owner = userID;
-  node._id = "1234567890FOO"
-  return Promise.resolve(
-    node
-  )
-}
+  node._id = "1234567890FOO";
+  return Promise.resolve(node);
+};
 
 exports.mockCreateNodeFail = async (data, userID) => {
-  return Promise.reject()
-}
+  return Promise.reject(
+    Error("This error is being thrown by a mock function")
+  );
+};
 
-exports.mockGetNode = async (id, userID) => {
+exports.mockGetNode = async (nodeID, userID) => {
   return Promise.resolve({
-    _id: id,
+    _id: nodeID,
     owner: userID,
     title: "Node Title",
     type: "Document",
     content: {},
+  });
+};
+
+exports.mockGetNodeFail = async (nodeID, userID) => {
+  return Promise.reject(
+    Error("This error is being thrown by a mock function")
+  );
+};
+
+exports.mockUpdateNode = async (data, nodeID, userID) => {
+  return Promise.resolve({
+    ok: 1,
+    id: nodeID,
+    owner: userID,
+  });
+};
+
+exports.mockUpdateNodeFail = async (data, nodeID, userID) => {
+  return Promise.reject(
+    Error("This error is being thrown by a mock function")
+  );
+};
+
+exports.getTestNodeID = () => {
+  return "test-node-id-1234567890";
+};
+
+exports.mockDeleteNode = async (nodeID, userID) => {
+  return Promise.resolve({
+    ok: 1,
+    id: nodeID,
+    owner: userID,
+  });
+};
+
+exports.mockDeleteNodeFail = async (nodeID, userID) => {
+  return Promise.reject(
+    Error("This error is being thrown by a mock function")
+  );
+};
+
+exports.mockGetTypeCollections = async (query, count) => {
+  return Promise.resolve(
+    new Array(count).fill({
+      query: query,
+      name: `1 template out of ${count}`
+    })
+  );
+};
+
+exports.mockGetTypeCollectionsFail = async (query, count) => {
+  return Promise.reject(
+    Error("This error is being thrown by a mock function")
+  );
+};
+
+exports.mockGetTypeCollection = async (typeCollectionID) => {
+  return Promise.resolve({
+    _id: typeCollectionID,
   })
 }
 
-exports.mockGetNodeFail = async (id, userID) => {
-  return Promise.reject()
-}
-
-exports.getTestNodeID = () => {
-  return "test-node-id-1234567890"
+exports.mockGetTypeCollectionFail = async (typeCollectionID) => {
+  return Promise.reject(
+    Error("This error is being thrown by a mock function")
+  );
 }

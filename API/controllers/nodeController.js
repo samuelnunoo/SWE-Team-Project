@@ -32,3 +32,25 @@ exports.postNode = (req, res) => {
       res.status(400).send(err)
     })
 };
+
+exports.putNode = (req, res) => {
+  db.updateNode(req.body, req.params.id, req.user.id)
+    .then((resp) => {
+      res.status(200).json(resp)
+    })
+    .catch((err) => {
+      res.status(400).send(err)
+    })
+}
+
+exports.deleteNode = (req, res) => {
+  db.deleteNode(req.params.id, req.user.id)
+    .then((result) => {
+      res
+      .status(200)
+      .json(result)
+    })
+    .catch((err) => {
+      res.status(404).send(err)
+    })
+}

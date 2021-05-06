@@ -19,8 +19,7 @@
     "supertest": "^6.1.3"
   },
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
-    "pretest": "cross-env NODE_ENV=test"
+    "test": "jest --testTimeout=10000"
   },
   "jest": {
     "testEnvironment": "node",
