@@ -1,0 +1,37 @@
+[
+  {
+    "name": "About",
+    "path": "/About",
+    "component": "C:\\\\Users\\\\Samuel\\\\Documents\\\\GitHub\\\\SWE-Team-Project\\\\nuxt\\\\pages\\\\About.vue",
+    "chunkName": "pages/About",
+    "_name": "_b1ba54c8"
+  },
+  {
+    "name": "Documents",
+    "path": "/Documents",
+    "component": "C:\\\\Users\\\\Samuel\\\\Documents\\\\GitHub\\\\SWE-Team-Project\\\\nuxt\\\\pages\\\\Documents.vue",
+    "chunkName": "pages/Documents",
+    "_name": "_4ed8b872"
+  },
+  {
+    "name": "Login",
+    "path": "/Login",
+    "component": "C:\\\\Users\\\\Samuel\\\\Documents\\\\GitHub\\\\SWE-Team-Project\\\\nuxt\\\\pages\\\\Login.vue",
+    "chunkName": "pages/Login",
+    "_name": "_defb5910"
+  },
+  {
+    "name": "signup",
+    "path": "/signup",
+    "component": "C:\\\\Users\\\\Samuel\\\\Documents\\\\GitHub\\\\SWE-Team-Project\\\\nuxt\\\\pages\\\\signup.vue",
+    "chunkName": "pages/signup",
+    "_name": "_55502c79"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\Samuel\\\\Documents\\\\GitHub\\\\SWE-Team-Project\\\\nuxt\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_4f689081"
+  }
+]
