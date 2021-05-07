@@ -17,14 +17,27 @@
       <!-- Login Button -->
       <v-btn
         to="/login"
-        text>
+        text
+        v-if="!$auth.user"
+      >
         Login
       </v-btn>
       <!-- SignUp Button -->
       <v-btn
         to="/signup"
-        text>
+        text
+        v-if="!$auth.user"
+        >
         Sign Up
+      </v-btn>
+
+      <!-- Logout Button -->
+       <v-btn
+        to="/signup"
+        text
+        v-if ="$auth.user"
+        >
+        Logout
       </v-btn>
    
     </v-app-bar>

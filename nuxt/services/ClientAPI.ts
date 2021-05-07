@@ -44,6 +44,10 @@ export class DocumentNodeRequests {
         return await axios.get(`/api/nodes/${id}`, {headers: AuthHeader()})
     }
 
+    static get_all = async () => {
+        return await axios.get(`/api/nodes/all`, {headers: AuthHeader()})
+    }
+
     static remove = async (id:string) => {
         return await axios.delete(`/api/nodes/${id}`,{headers: AuthHeader()})
     }
