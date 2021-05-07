@@ -14,7 +14,8 @@
         <v-col class="text-center">
           <h1> Type.io </h1>
           <h4> Simplicity and Power </h4>
-          <v-btn> Sign-Up </v-btn>
+          <v-btn
+            to="/signup"> Sign-Up </v-btn>
         </v-col>
       </v-row>
     </v-parallax>

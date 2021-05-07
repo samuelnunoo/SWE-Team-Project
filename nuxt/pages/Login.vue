@@ -1,29 +1,41 @@
 /*  eslint-disable */
 <template>
     <v-main>
-        <v-form
-            v-model="valid">
-            <!-- Email -->
-            <v-text-field
-                v-model="email"
-                :rules="emailRules"
-            />
-            <!-- Password -->
-            <v-text-field
-                v-model="password"
-                :rules="passRules"
-                type="password"
-            />
-            <!-- Submit -->
-            <v-btn
-                :disabled="!valid"
-                color="success"
-                @click="onSubmit"
-            > 
-                Submit
-            </v-btn>
-        </v-form>
+          <!-- Splash Screen -->
+    <v-parallax
+      dark
+      height="1000"
+      src="https://images.unsplash.com/photo-1618438974496-015b1fb3e2d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1944&q=80"
+    >
+        <v-card class="pa-12 card-style">
+            <v-form
+                v-model="valid">
+                <!-- Email -->
+                <v-text-field
+                label="Email"
+                    v-model="email"
+                    :rules="emailRules"
+                />
+                <!-- Password -->
+                <v-text-field
+                    label="Password"
+                    v-model="password"
+                    :rules="passRules"
+                    type="password"
+                />
+                <!-- Submit -->
+                <v-btn
+                    :disabled="!valid"
+                    color="success"
+                    @click="onSubmit"
+                > 
+                    Submit
+                </v-btn>
+            </v-form>
+        </v-card>
+    </v-parallax>
     </v-main>
+    
 </template>
 
 <script>
@@ -48,9 +60,26 @@
         methods:{
            async  onSubmit (){
                 this.loading = true
-                const response = await this.$auth.login({email:this.email,password:this.password})
-                console.log(response)
+
+                try{
+        const response = await this.$auth.loginWith('local',{email:this.email,password:this.password})
+                }
+
+                catch(error) {
+                    console.log(error)
+                }
+        
+                
+        
             }
         }
     }
 </script>
+
+<style scoped>
+
+
+    .card-style{
+        max-width: "40px";
+    }
+</style>

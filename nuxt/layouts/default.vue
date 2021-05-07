@@ -50,7 +50,6 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
-
       title: 'Type.io'
     }
   }

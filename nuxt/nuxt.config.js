@@ -51,6 +51,7 @@ export default {
     '@nuxtjs/auth-next'
   ],
 
+  //@note auth 
   auth: {
     strategies: {
       local: {
@@ -69,12 +70,6 @@ export default {
           user: { url: '/api/auth/user', method: 'get' }
         }
       }
-    }, 
-    redirect: {
-      login:'/login',
-      logout: '/',
-      home: "/documents"
-
     }
   },
 
