@@ -1,5 +1,8 @@
 import axios from "axios"
 
+
+const TEST_URL = "http://localhost:8080"
+
 const AuthHeader = () => {
     const storedUser =  localStorage.getItem("user")
     let user = JSON.parse(storedUser ? storedUser: "")
@@ -11,12 +14,12 @@ const AuthHeader = () => {
 
 export class AuthenticationRequests {
     static signup = async (data:any) => {
-        return await axios.post('/api/auth/signup',data).then(response => {   
+        return await axios.post(TEST_URL + '/api/auth/signup',data).then(response => {   
         })
     }
 
     static login = async (data:any) => {
-         return await axios.post('/api/auth/login',data).then(response => {
+         return await axios.post(TEST_URL + '/api/auth/login',data).then(response => {
              if (response.data.accessToken) {
                  localStorage.setItem("user",JSON.stringify(response.data))
              }
@@ -42,15 +45,15 @@ export class DocumentNodeRequests {
     }
 
     static get = async (id:string) => {
-        return await axios.get(`/api/nodes/${id}`, {headers: AuthHeader()})
+        return await axios.get(TEST_URL + `/api/nodes/${id}`, {headers: AuthHeader()})
     }
 
     static get_all = async () => {
-        return await axios.get(`/api/nodes/all`, {headers: AuthHeader()})
+        return await axios.get(TEST_URL + `/api/nodes/all`, {headers: AuthHeader()})
     }
 
     static remove = async (id:string) => {
-        return await axios.delete(`/api/nodes/${id}`,{headers: AuthHeader()})
+        return await axios.delete(TEST_URL + `/api/nodes/${id}`,{headers: AuthHeader()})
     }
 }
 
