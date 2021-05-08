@@ -7,6 +7,7 @@ var uri = "mongodb://localhost:27017/TypeIO";
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify: false
 };
 
 // Connect MongoDB Atlas using mongoose connect method

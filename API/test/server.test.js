@@ -66,7 +66,7 @@ describe("1: Valid token is required for GET/PUT/POST operations on private reso
 });
 
 describe("2: POST /api/auth/signup", () => {
-  it("Attempt to sign up with duplicate email responds 409", async () => {
+  it("Attempt to sign up with error responds 409", async () => {
     db.createUser.mockImplementationOnce(testHelper.mockPromiseReject);
 
     await supertest(app)
@@ -82,7 +82,7 @@ describe("2: POST /api/auth/signup", () => {
       .send(testHelper.getDummySignupData())
       .expect(201)
       .then((res) => {
-        expect(res.body).toStrictEqual(testHelper.getDummySignupData());
+        expect(res.body.user).toStrictEqual(testHelper.getDummySignupResponseData());
       });
   });
 });
@@ -164,7 +164,7 @@ describe("5: POST /api/nodes", () => {
       .post("/api/nodes")
       .set(headerValidToken)
       .send(testHelper.getMockNodeData())
-      .expect(200)
+      .expect(201)
       .then((res) => {
         expect(res.body).toHaveProperty("_id");
         expect(res.body.owner).toBe(testHelper.getDummyUserID());

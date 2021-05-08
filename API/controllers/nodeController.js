@@ -15,8 +15,12 @@ exports.getNodes = (req, res) => {
 
 exports.getNode = (req, res) => {
   db.getNode(req.params.id, req.user.id)
-    .then((nodes) => {
-      res.status(200).json(nodes);
+    .then((node) => {
+      if (node != null) {
+        res.status(200).json(node);
+      } else {
+        res.status(404).send({"message": "Error: node not found"});
+      }
     })
     .catch((err) => {
       res.status(404).send(err);
@@ -26,7 +30,7 @@ exports.getNode = (req, res) => {
 exports.postNode = (req, res) => {
   db.createNode(req.body, req.user.id)
     .then((node) => {
-      res.status(200).json(node)
+      res.status(201).json(node)
     })
     .catch((err) => {
       res.status(400).send(err)

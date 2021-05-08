@@ -30,5 +30,7 @@ app
   .route("/api/typeCollections/:id")
   .get(typeCollectionHandlers.getTypeCollection)
 
-
+app.route("/api/account")
+  .delete(authHandlers.validateToken, authHandlers.deleteAccount)
+  
 module.exports = app;

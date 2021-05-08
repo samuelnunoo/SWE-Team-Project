@@ -75,6 +75,16 @@ exports.getDummySignupData = () => {
   };
 };
 
+exports.getDummySignupResponseData = () => {
+  return {
+    email: "janedoe@example.com",
+    hash_password: "",
+    password: "Password!1",
+    firstName: "Jane",
+    lastName: "Doe",
+  };
+};
+
 exports.getDummyLoginData = () => {
   return {
     email: "janedoe@example.com",
