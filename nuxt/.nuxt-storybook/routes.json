@@ -14,6 +14,13 @@
     "_name": "_4ed8b872"
   },
   {
+    "name": "Editor",
+    "path": "/Editor",
+    "component": "C:\\\\Users\\\\Samuel\\\\Documents\\\\GitHub\\\\SWE-Team-Project\\\\nuxt\\\\pages\\\\Editor.vue",
+    "chunkName": "pages/Editor",
+    "_name": "_e462f324"
+  },
+  {
     "name": "Login",
     "path": "/Login",
     "component": "C:\\\\Users\\\\Samuel\\\\Documents\\\\GitHub\\\\SWE-Team-Project\\\\nuxt\\\\pages\\\\Login.vue",

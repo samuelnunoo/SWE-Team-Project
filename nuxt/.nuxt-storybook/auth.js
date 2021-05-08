@@ -18,7 +18,7 @@ export default function (ctx, inject) {
   "redirect": {
     "login": "/login",
     "logout": "/",
-    "home": "/documents",
+    "home": "/",
     "callback": "/login"
   },
   "vuex": {
@@ -56,10 +56,6 @@ export default function (ctx, inject) {
     "logout": {
       "url": "/api/auth/logout",
       "method": "post"
-    },
-    "user": {
-      "url": "/api/auth/user",
-      "method": "get"
     }
   },
   "name": "local"

@@ -25,7 +25,7 @@ export class AuthenticationRequests {
              return response.data
          })
     }
-
+    //@todo switch to use auth 
     static logout = () => {
         localStorage.removeItem("user")
       //  store.commit('logout')
@@ -37,6 +37,7 @@ export class DocumentNodeRequests {
     static create = () => {
     }
 
+    //@todo finish this 
     static update = () => {
     }
 

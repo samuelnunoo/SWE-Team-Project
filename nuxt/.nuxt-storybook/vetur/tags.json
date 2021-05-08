@@ -1,4 +1,7 @@
 {
+  "LoginCard": {
+    "description": "Auto imported from components/loginCard.vue"
+  },
   "Logo": {
     "description": "Auto imported from components/Logo.vue"
   },

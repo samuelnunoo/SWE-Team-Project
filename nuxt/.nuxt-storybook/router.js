@@ -6,6 +6,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _b1ba54c8 = () => interopDefault(import('..\\pages\\About.vue' /* webpackChunkName: "pages/About" */))
 const _4ed8b872 = () => interopDefault(import('..\\pages\\Documents.vue' /* webpackChunkName: "pages/Documents" */))
+const _e462f324 = () => interopDefault(import('..\\pages\\Editor.vue' /* webpackChunkName: "pages/Editor" */))
 const _defb5910 = () => interopDefault(import('..\\pages\\Login.vue' /* webpackChunkName: "pages/Login" */))
 const _55502c79 = () => interopDefault(import('..\\pages\\signup.vue' /* webpackChunkName: "pages/signup" */))
 const _4f689081 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
@@ -29,6 +30,10 @@ export const routerOptions = {
     path: "/Documents",
     component: _4ed8b872,
     name: "Documents"
+  }, {
+    path: "/Editor",
+    component: _e462f324,
+    name: "Editor"
   }, {
     path: "/Login",
     component: _defb5910,
