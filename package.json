@@ -10,6 +10,7 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.7",
+    "newman": "^5.2.3",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1"
   },
@@ -21,6 +22,7 @@
   },
   "scripts": {
     "test": "jest --testTimeout=10000",
+    "test-api-integration": "newman run ./Integration-Tests/TypeIO-auto-runner.postman_collection.json -e ./Integration-Tests/TypeIO-Local.postman_environment.json",
     "start-dev": "nodemon API/index"
   },
   "jest": {
