@@ -1,8 +1,6 @@
 "use strict";
 
 const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
-
 const Schema = mongoose.Schema;
 
 const TypeCollectionSchema = new Schema({
@@ -21,6 +19,14 @@ const TypeCollectionSchema = new Schema({
   InterfaceData: {
     type: Map,
     of: Object
+  },
+  createdOn: {
+    type: Date,
+    default: Date.now,
+  },
+  lastUpdate: {
+    type: Date,
+    default: Date.now,
   },
 });
 
