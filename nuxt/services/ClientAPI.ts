@@ -1,19 +1,25 @@
 import axios from "axios"
 //@note Review 
 
-const TEST_URL = "http://localhost:8080"
-
-const AuthHeader = () => {
-    const token =  localStorage.getItem("auth._token.local")?.split("Bearer ")[1]
-    return token ? {token} : {}
-
-}
+const SERVER_URL = "http://localhost:8080"
 
 interface nodeObj {
     title:string,
     type:string,
     content:Object
 }
+
+/* 
+    This method gets the auth token and removes Bearer to be compatible with the REST API
+
+*/
+const AuthHeader = () => {
+    const token =  localStorage.getItem("auth._token.local")?.split("Bearer ")[1]
+    return token ? {token} : {}
+
+}
+
+
 
 export class AuthenticationRequests {
 
@@ -23,7 +29,7 @@ export class AuthenticationRequests {
     */
 
     static signup = async (data:any) => {
-        return await axios.post(TEST_URL + '/api/auth/signup',data)
+        return await axios.post(SERVER_URL + '/api/auth/signup',data)
     }
 
   
@@ -39,7 +45,7 @@ export class DocumentNodeRequests {
     */
 
     static create = async () => {
-        return await axios.post(TEST_URL + "/api/nodes",{title:"New Document", type:"Document"}, {headers: {  'Content-Type': 'application/json',...AuthHeader()}})
+        return await axios.post(SERVER_URL + "/api/nodes",{title:"New Document", type:"Document"}, {headers: {  'Content-Type': 'application/json',...AuthHeader()}})
     }
 
 
@@ -50,7 +56,7 @@ export class DocumentNodeRequests {
     */
 
     static update = async (id:string,data:nodeObj) => {
-        return await axios.put(TEST_URL  + `/api/nodes/${id}`, data, {headers: { 'Content-Type': 'application/json', ...AuthHeader() } })
+        return await axios.put(SERVER_URL  + `/api/nodes/${id}`, data, {headers: { 'Content-Type': 'application/json', ...AuthHeader() } })
 
     }
 
@@ -61,7 +67,7 @@ export class DocumentNodeRequests {
     */
 
     static get = async (id:string) => {
-        return await axios.get(TEST_URL + `/api/nodes/${id}`, {headers: AuthHeader()})
+        return await axios.get(SERVER_URL + `/api/nodes/${id}`, {headers: AuthHeader()})
     }
 
 
@@ -70,7 +76,7 @@ export class DocumentNodeRequests {
 
     */
     static get_all = async () => {
-        return await axios.get(TEST_URL + `/api/nodes`, {headers: AuthHeader()})
+        return await axios.get(SERVER_URL + `/api/nodes`, {headers: AuthHeader()})
     }
 
     /*
@@ -78,7 +84,7 @@ export class DocumentNodeRequests {
 
     */
     static remove = async (id:string) => {
-        return await axios.delete(TEST_URL + `/api/nodes/${id}`,{headers: AuthHeader()})
+        return await axios.delete(SERVER_URL + `/api/nodes/${id}`,{headers: AuthHeader()})
     }
 }
 

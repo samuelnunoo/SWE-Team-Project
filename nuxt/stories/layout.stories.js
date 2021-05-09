@@ -32,7 +32,7 @@ export const notSignedIn = () => ({
         }
     },
     components: {'layout':layout},
-    template:'<layout :storybookDatasInject=storybookDataInject />'
+    template:'<layout :storybookDataInject=storybookDataInject />'
 })
 
 

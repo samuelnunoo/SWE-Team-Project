@@ -17,8 +17,7 @@ Vue.mixin({
             default: null
         }
     },
-    beforeMount() {
-        console.log("I am Running:Storybook")
+    mounted() {
         if (this.storybookDataInject) {
             this.storybookDataInject()
     }
