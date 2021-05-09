@@ -11,6 +11,7 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.7",
+    "prosemirror-model": "^1.14.1",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1"
   },
@@ -22,7 +23,8 @@
   },
   "scripts": {
     "test": "jest --testTimeout=10000",
-    "start-dev": "nodemon API/index"
+    "start-dev": "nodemon API/index",
+    "debug": "node --inspect API/index"
   },
   "jest": {
     "testEnvironment": "node",

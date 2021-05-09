@@ -21,11 +21,11 @@ const NodeSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  Parent: {
+  parent: {
     type: Schema.Types.ObjectId,
     ref: 'Node'
   },
-  Content: {
+  content: {
     type: Object,
   },
   createdOn: {

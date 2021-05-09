@@ -7,15 +7,32 @@ export default {
 
 
 
+
+const mock_auth = function () {
+
+    this.title = "Mock"
+    this.$data.title = "Mock2"
+    /*https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+        to modify the $auth property 
+    */
+    Object.defineProperty(this,'$auth',{
+        value: {loggedIn:true},
+        writable:true
+    })
+
+    console.log(this.title)
+
+}
+
 export const notSignedIn = () => ({
     props: {
-        authMock: {
-            type: Boolean,
-            default: false
+        storybookDataInject: {
+            type: Function,
+            default: mock_auth
         }
     },
     components: {'layout':layout},
-    template:'<layout :authMock="authMock"/>'
+    template:'<layout :storybookDatasInject=storybookDataInject />'
 })
 
 

@@ -56,7 +56,7 @@
                 password:"",
                 passRules:[
                     v => !!v || 'Password is required',
-                    v => v.length > 8 || "Password must be 8 or more characters"
+                    v => v.length >= 8 || "Password must be 8 or more characters"
                 ],
             }
         },
@@ -66,12 +66,18 @@
                 this.error = false;
 
                 try{
-        const response = await this.$auth.loginWith('local',{email:this.email,password:this.password})
+
+
+              const response = await this.$auth.loginWith('local',{data:{email:this.email,password:this.password}})
+            location.reload()
+            this.$router.push("/documents")
                 }
 
                 catch(error) {
                     this.error = error
-                    this.$refs.form.reset()
+                    this.password = "",
+                    this.email = ""
+                    this.$refs.form.resetValidation()
                 }
         
                 

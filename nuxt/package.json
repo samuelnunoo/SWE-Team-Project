@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "debug": "nuxt --inspect",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -14,8 +15,16 @@
     "@nuxtjs/auth-next": "^5.0.0-1620155494.96c1b50",
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/pwa": "^3.3.5",
+    "@tiptap/core": "^2.0.0-beta.53",
+    "@tiptap/extension-heading": "^2.0.0-beta.11",
+    "@tiptap/starter-kit": "^2.0.0-beta.50",
+    "@tiptap/vue-2": "^2.0.0-beta.27",
+    "@tiptap/vue-3": "^2.0.0-beta.33",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
+    "orderedmap": "^1.1.1",
+    "prosemirror-model": "^1.14.1",
+    "sinon": "^10.0.0",
     "ts-node": "^9.1.1"
   },
   "devDependencies": {

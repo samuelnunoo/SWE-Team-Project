@@ -28,7 +28,14 @@ import Vue from 'vue'
 export default {
   name: 'Home',
   auth:false,
+  beforeCreate() {
+   if (this.$auth.loggedIn) {
+      this.$router.push("/documents")
+    }
+  },
   mounted() {
+
+ 
  
   }
 }

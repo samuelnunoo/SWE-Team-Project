@@ -51,7 +51,7 @@ export default {
     '@nuxtjs/auth-next'
   ],
 
-  //@note auth 
+  //@note auth  https://auth.nuxtjs.org/api/options/#cookie
   auth: {
     strategies: {
       local: {
@@ -62,14 +62,19 @@ export default {
         },
         user: {
           property: 'user',
-          // autoFetch: true
+          autoFetch: false
         },
         endpoints: {
-          login: { url: '/api/auth/login', method: 'post' },
-          logout: { url: '/api/auth/logout', method: 'post' },
-         //@todo see if we need this  user: { url: '/api/auth/user', method: 'get' }
+          login: { url: 'http://localhost:8080/api/auth/signin', method: 'post' },
+          logout:false,
+          user: false 
         }
       }
+    }, 
+    redirect: {
+      login: '/login',
+      logout: '/',
+      home: '/documents'
     }
   },
 

@@ -4,44 +4,35 @@ import axios from "axios"
 const TEST_URL = "http://localhost:8080"
 
 const AuthHeader = () => {
-    const storedUser =  localStorage.getItem("user")
-    let user = JSON.parse(storedUser ? storedUser: "")
-    if (user && user.accessToken) {
-        return {Authorization: "Bearer " +  user.accessToken}
-    }
-    return {}
+    const token =  localStorage.getItem("auth._token.local")?.split("Bearer ")[1]
+    return token ? {token} : {}
+
+}
+
+interface nodeObj {
+    title:string,
+    type:string,
+    content:Object
 }
 
 export class AuthenticationRequests {
     static signup = async (data:any) => {
-        return await axios.post(TEST_URL + '/api/auth/signup',data).then(response => {   
-        })
+        return await axios.post(TEST_URL + '/api/auth/signup',data)
     }
 
-    static login = async (data:any) => {
-         return await axios.post(TEST_URL + '/api/auth/login',data).then(response => {
-             if (response.data.accessToken) {
-                 localStorage.setItem("user",JSON.stringify(response.data))
-             }
+  
 
-          //  store.commit('auth')
-             return response.data
-         })
-    }
-    //@todo switch to use auth 
-    static logout = () => {
-        localStorage.removeItem("user")
-      //  store.commit('logout')
-    }
 }
 
 export class DocumentNodeRequests {
-    //@todo implement node interface
-    static create = () => {
+
+    static create = async () => {
+        return await axios.post(TEST_URL + "/api/nodes",{title:"New Document", type:"Document"}, {headers: {  'Content-Type': 'application/json',...AuthHeader()}})
     }
 
-    //@todo finish this 
-    static update = () => {
+    static update = async (id:string,data:nodeObj) => {
+        return await axios.put(TEST_URL  + `/api/nodes/${id}`, data, {headers: { 'Content-Type': 'application/json', ...AuthHeader() } })
+
     }
 
     static get = async (id:string) => {
@@ -49,7 +40,7 @@ export class DocumentNodeRequests {
     }
 
     static get_all = async () => {
-        return await axios.get(TEST_URL + `/api/nodes/all`, {headers: AuthHeader()})
+        return await axios.get(TEST_URL + `/api/nodes`, {headers: AuthHeader()})
     }
 
     static remove = async (id:string) => {

@@ -15,7 +15,8 @@
           <v-icon>mdi-magnify</v-icon>
         </v-btn>
   
-        <v-btn icon>
+        <v-btn icon
+          @click="createDoc">
           <v-icon>mdi-plus</v-icon>
         </v-btn>
       </v-toolbar>
@@ -38,11 +39,11 @@
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title v-text="doc.title"></v-list-item-title>
-            <v-list-item-subtitle v-text="doc.date"></v-list-item-subtitle>
+            <v-list-item-subtitle v-text="doc.createdOn"></v-list-item-subtitle>
           </v-list-item-content>
             <v-list-item-action>
-            <v-btn icon>
-              <v-icon color="grey lighten-1">close-circle-outline</v-icon>
+            <v-btn  @click.prevent="removeDoc(doc)" icon>
+              <v-icon color="grey lighten-1">mdi-close-circle-outline</v-icon>
             </v-btn>
           </v-list-item-action>
   
@@ -62,21 +63,30 @@
 <script>
 import { DocumentNodeRequests } from '../services/ClientAPI';
 export default {
-    auth:false,
+    auth:true,
+    props: {
+      setup:{
+        type:Function,
+        default:null
+      }
+    },
     data() {
         return {
             error:false,
-            docs: [ {id:1, title:"Hello World",date: new Date()}, {id:2,title:"Doc2", date: new Date()}]
+            docs: []
 
         }
     },
     mounted() {
+      this.getDocs()
       
     },
     methods:{
-        getDocs: async () => {
-            try {
+        getDocs: async function () {
+
+          try {
                  const nodes = await DocumentNodeRequests.get_all()
+                 this.docs = nodes.data
             }
 
             catch  (error) {
@@ -85,9 +95,25 @@ export default {
          
 
         },
-        goToDoc: (doc) => {
-            console.log(doc)
-        }
+        removeDoc: function (doc) {
+          console.log('remove' + doc)
+         
+        },
+        goToDoc: function (doc)  {
+          this.$router.push(`/editor?id=${doc._id}`)
+        },
+
+        createDoc: async function () {
+          try {
+          const doc = await DocumentNodeRequests.create()
+          this.$router.push(`/editor?id=${doc.data._id}`)
+          }
+          catch(err) {
+                console.log(err)
+          }
+
+      
+        } 
     }
    
 }

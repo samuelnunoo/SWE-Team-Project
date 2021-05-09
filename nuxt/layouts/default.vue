@@ -8,17 +8,17 @@
    
    
       <v-btn
-        to="/"
+        to="/documents"
         text
       >
-       Type.io
+       {{this.title}}
       </v-btn>
       <v-spacer />
       <!-- Login Button -->
       <v-btn
         to="/login"
         text
-        v-if="!this.auth"
+        v-if="!this.$auth.loggedIn"
       >
         Login
       </v-btn>
@@ -26,7 +26,7 @@
       <v-btn
         to="/signup"
         text
-        v-if="!this.auth"
+        v-if="!this.$auth.loggedIn"
         >
         Sign Up
       </v-btn>
@@ -35,7 +35,7 @@
        <v-btn
         @click='logout'
         text
-        v-if ="this.auth"
+        v-if ="this.$auth.loggedIn"
         >
         Logout
       </v-btn>
@@ -58,12 +58,6 @@
 
 <script>
 export default {
-  props:{ 
-    authMock: {
-      type: Boolean,
-      default: false 
-    }
-  },
   data () {
     return {
       clipped: false,
@@ -78,16 +72,21 @@ export default {
         return this.authMock
       }
       else {
-        return this.$auth.user 
+        return this.$auth.loggedIn
       }
   
     }
   },
   methods: {
    async logout() {
-      const logout = await this.auth.logout()
+      const logout = await this.$auth.logout()
+      //@todo figure out how to refresh page 
       
     }
+  },
+
+  mounted() {
+
   }
 
 }

@@ -22,6 +22,19 @@
                                 v-model="email"
                                 :rules="emailRules"
                             />
+
+                               <v-text-field
+                            label="Enter your first name"
+                                v-model="firstName"
+                                :rules="nameRules"
+                            />
+
+
+                               <v-text-field
+                            label="Enter your last name"
+                                v-model="lastName"
+                                :rules="nameRules"
+                            />
                             <!-- Password -->
                             <v-text-field
                                 label="Enter a password"
@@ -68,7 +81,14 @@ import {AuthenticationRequests} from "../services/ClientAPI"
                 loading:false,
                 valid:false,
                 error: false,
-              
+                firstName:"",
+                lastName:"",
+                email: "",
+                password1: "",
+                password2: "",
+                nameRules :[
+                    v => !!v || 'This field is required'
+                ],
                 emailRules: [
                     v => !!v || 'E-mail is required',
                     v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
@@ -85,40 +105,14 @@ import {AuthenticationRequests} from "../services/ClientAPI"
                 ],
             }
         },
-        computed: {
-              email(v) {
-                  if (this.mockObj) {
-                      return this.mockObj.email
-                  }
-                  return v 
-
-              },
-                password1(v) { 
-                    if (this.mockObj) {
-                      return this.mockObj.password1
-                  }
-                  return v 
-
-
-
-                },
-                password2(v){
-
-                    if (this.mockObj) {
-                      return this.mockObj.email
-                  }
-                  return v 
-
-                }
-            
-        },
+    
         methods:{
            async  onSubmit (){
                 this.loading = true
                 this.error = false
                 try{
                     //signup  @note should I mock this?
-                    const response = await AuthenticationRequests.signup({email:this.email,password:this.password1})
+                    const response = await AuthenticationRequests.signup({email:this.email,password:this.password1,firstName:this.firstName,lastName:this.lastName})
 
                     //login @todo check if data format is same maybe mock this
                     await this.$auth.loginWith('local',{data:{
@@ -130,7 +124,8 @@ import {AuthenticationRequests} from "../services/ClientAPI"
                     this.$router.push("/documents")
                 }
                 catch(error) {
-                    this.error = error //@todo get Evan's message
+                    console.log(error)
+                    this.error = error.message ? error.message : error//@todo get Evan's message
                     this.reset()
                 }
        
