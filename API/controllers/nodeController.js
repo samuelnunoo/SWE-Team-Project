@@ -8,7 +8,6 @@ exports.getNodes = (req, res) => {
       res.status(200).json(nodes);
     })
     .catch((err) => {
-      console.log(err); //@todo can remove 
       res.status(500).send(err);
     });
 };

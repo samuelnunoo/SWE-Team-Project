@@ -67,7 +67,7 @@ export class DocumentNodeRequests {
     */
 
     static get = async (id:string) => {
-        return await axios.get(SERVER_URL + `/api/nodes/${id}`, {headers: AuthHeader()})
+        return await axios.get(SERVER_URL + `/api/nodes/${id}?type=Document`, {headers: AuthHeader()})
     }
 
 
