@@ -1,5 +1,5 @@
 import axios from "axios"
-
+//@note Review 
 
 const TEST_URL = "http://localhost:8080"
 
@@ -16,6 +16,10 @@ interface nodeObj {
 }
 
 export class AuthenticationRequests {
+
+    /*
+        Loging and Logout were depreciated from the AuthRequests model and
+
     static signup = async (data:any) => {
         return await axios.post(TEST_URL + '/api/auth/signup',data)
     }

@@ -51,7 +51,7 @@ export default {
     '@nuxtjs/auth-next'
   ],
 
-  //@note auth  https://auth.nuxtjs.org/api/options/#cookie
+  //@note auth  https://auth.nuxtjs.org/api/options/#cookie  
   auth: {
     strategies: {
       local: {
