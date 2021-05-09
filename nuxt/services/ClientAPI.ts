@@ -19,7 +19,9 @@ export class AuthenticationRequests {
 
     /*
         Loging and Logout were depreciated from the AuthRequests model and
-
+        is now handled by the nuxt auth model 
+    */
+   
     static signup = async (data:any) => {
         return await axios.post(TEST_URL + '/api/auth/signup',data)
     }
