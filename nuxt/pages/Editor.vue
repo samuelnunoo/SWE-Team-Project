@@ -69,6 +69,7 @@ import Heading from '@tiptap/extension-heading'
 import {DocumentNodeRequests} from "../services/ClientAPI"
 
 export default {
+  name:"Editor",
   auth:true,
   components: {
    "editor-content": EditorContent,
@@ -166,6 +167,12 @@ export default {
           else {
             this.error = "Document has invalid id"
           }
+    },
+    test() {
+      this.editor = new Editor({
+      content:this.content,
+      extensions: [StarterKit,Heading]
+    })
     }
    },
 
