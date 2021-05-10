@@ -82,11 +82,7 @@ export default {
         title:"New Document",
         dialog:false,
         alert:false,
-<<<<<<< HEAD
-        content: `<h1> Hello World </h1>`,
-=======
         content: '<p> Input your content here! </p>',
->>>>>>> 5388f419481dcdcdae54dc3bad979cff974f993b
         id: "",
         error:false,
         editor: null,
