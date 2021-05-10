@@ -13,7 +13,7 @@ interface nodeObj {
     This method gets the auth token and removes Bearer to be compatible with the REST API
 
 */
-const AuthHeader = () => {
+export const AuthHeader = () => {
     const token =  localStorage.getItem("auth._token.local")?.split("Bearer ")[1]
     return token ? {token} : {}
 
