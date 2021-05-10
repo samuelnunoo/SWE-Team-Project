@@ -11,6 +11,48 @@
             <v-btn 
             color='blue'
             @click="saveDocument"> Save </v-btn>
+
+            <v-dialog
+              v-model="dialog" 
+              persistent
+              max-width="290"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  color="primary"
+                  dark
+                  text 
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  Delete
+                </v-btn>
+              </template>
+              <v-card>
+                <v-card-title class="headline">
+                  Remove Document?
+                </v-card-title>
+                <v-card-text> You can not undo this action</v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+        
+                  <v-btn
+                    color="red"
+                    text
+                    @click="removeDocument"
+                  >
+                    Agree
+                  </v-btn>
+                  <v-btn
+                    color="green darken-1"
+                    text
+                    @click="dialog = false"
+                  >
+                    Disagree
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
     </v-toolbar>
     </v-row>
   <editor-content :editor="editor" />
@@ -35,11 +77,12 @@ export default {
   data() {
     return {
         title:"New Document",
+        dialog:false,
         alert:false,
         content: '<p> um ok </p>',
         id: "",
         error:false,
-      editor: null,
+        editor: null,
     }
   },
 
@@ -68,7 +111,7 @@ export default {
       //to get id 
       if (this.$route.query && this.$route.query.id) {
         const id = this.$route.query.id
-        this.id = id 
+        this.id = id
 
         try {
 
@@ -95,13 +138,41 @@ export default {
         this.$router.push("/documents")
       }
 
+    },
+
+    async removeDocument() {
+
+        //Check if valid id
+
+          if (this.id !== "") {
+              //try to remove
+
+            try {
+            console.log(this.id,"This Testing")
+            const doc = await DocumentNodeRequests.remove(this.id)
+            this.dialog = false 
+            this.$router.push("/documents")
+          
+            } 
+            
+          
+            catch (err) {
+              this.error = err  
+          }
+
+
+          }
+
+          else {
+            this.error = "Document has invalid id"
+          }
     }
    },
 
   mounted() {
 
     this.loadDocument()
-
+    
   },
 
   beforeUnmount() {

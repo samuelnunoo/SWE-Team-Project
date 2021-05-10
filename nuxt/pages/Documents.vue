@@ -42,9 +42,8 @@
             <v-list-item-subtitle v-text="doc.createdOn"></v-list-item-subtitle>
           </v-list-item-content>
             <v-list-item-action>
-            <v-btn  @click.prevent="removeDoc(doc)" icon>
-              <v-icon color="grey lighten-1">mdi-close-circle-outline</v-icon>
-            </v-btn>
+              <!-- remove --> 
+        
           </v-list-item-action>
   
       
@@ -72,9 +71,9 @@ export default {
     },
     data() {
         return {
+            dialog:false,
             error:false,
             docs: []
-
         }
     },
     mounted() {
@@ -82,7 +81,9 @@ export default {
       
     },
     methods:{
+
         getDocs: async function () {
+          //search @todo - docs.filter(doc -> doc.title.contains(Query) )
 
           try {
                  const nodes = await DocumentNodeRequests.get_all()
@@ -95,10 +96,12 @@ export default {
          
 
         },
+
         removeDoc: function (doc) {
           console.log('remove' + doc)
          
         },
+
         goToDoc: function (doc)  {
           this.$router.push(`/editor?id=${doc._id}`)
         },

@@ -23,7 +23,6 @@
 </v-app>
 </template>
 <script >
-import Vue from 'vue'
 
 export default {
   name: 'Home',

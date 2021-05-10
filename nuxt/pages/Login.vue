@@ -65,19 +65,21 @@
                 this.loading = true
                 this.error = false;
 
-                try{
+                try {
 
-
-              const response = await this.$auth.loginWith('local',{data:{email:this.email,password:this.password}})
+            const response = await this.$auth.loginWith('local',{data:{email:this.email,password:this.password}})
             location.reload()
             this.$router.push("/documents")
+
                 }
 
                 catch(error) {
+
                     this.error = error
                     this.password = "",
                     this.email = ""
                     this.$refs.form.resetValidation()
+                    
                 }
         
                 
