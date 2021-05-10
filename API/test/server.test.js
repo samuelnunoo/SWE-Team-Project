@@ -236,7 +236,7 @@ describe("8: DELETE /api/nodes/:id", () => {
         expect(res.body.id).toBe(testHelper.getTestNodeID());
       });
   });
-  it("Params go through and request with valid ID responds 200", async () => {
+  it("Request with invalid ID responds 404", async () => {
     const headerValidToken = { token: testHelper.getValidToken() };
     db.deleteNode.mockImplementationOnce(testHelper.mockDeleteNodeFail);
     await supertest(app)
