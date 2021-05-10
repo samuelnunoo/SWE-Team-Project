@@ -22,6 +22,7 @@
     "@tiptap/vue-2": "^2.0.0-beta.27",
     "@tiptap/vue-3": "^2.0.0-beta.33",
     "core-js": "^3.9.1",
+    "jest-mock-axios": "^4.4.0",
     "nuxt": "^2.15.3",
     "orderedmap": "^1.1.1",
     "prosemirror-model": "^1.14.1",

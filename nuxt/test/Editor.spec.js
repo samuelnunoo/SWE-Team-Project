@@ -4,11 +4,25 @@ import StarterKit from '@tiptap/starter-kit'
 import { Editor } from '@tiptap/vue-2'
 
 describe('Editor.vue', () => {
+  // Handle Responses 
+
+
+  // Given some state ---> 
+
+  //    
+
+
+  // Load Document
+
+
+  // Delete Document 
+
+
+  // Update Document 
+
+
     it('can recognize default text', () => {
       //@todo 
 
-     const editor =  new Editor({content:'<p>Hello </p>',extensions: [StarterKit]})
-
-     expect(editor.getHTML()).toBe("<p>Hello </p>")
     })
   })
