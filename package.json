@@ -24,7 +24,8 @@
   "scripts": {
     "test": "jest --testTimeout=10000",
     "start-dev": "nodemon API/index",
-    "debug": "node --inspect API/index"
+    "debug": "node --inspect API/index",
+    "start": "nodemon API/index && nuxt"
   },
   "jest": {
     "testEnvironment": "node",
