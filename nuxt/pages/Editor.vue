@@ -63,10 +63,15 @@
 </template>
 
 <script>
+
+
 import { Editor, EditorContent } from '@tiptap/vue-2'
 import StarterKit from '@tiptap/starter-kit'
 import Heading from '@tiptap/extension-heading'
 import {DocumentNodeRequests} from "../services/ClientAPI"
+import Link from '@tiptap/extension-link'
+
+
 
 export default {
   auth:true,
@@ -79,16 +84,20 @@ export default {
         title:"New Document",
         dialog:false,
         alert:false,
-        content: '<p> um ok </p>',
+        content: '<p> Input your content here! </p>',
         id: "",
         error:false,
         editor: null,
     }
   },
 
+
    methods: {
     async saveDocument() {
-        // get JSON from editor instance
+      /*
+        triggered by save button in browser instance
+        requests to update using current document page id and update method in client API
+      */
       if (this.editor) {
         const editorJSON = this.editor.getJSON()
         try {
@@ -108,7 +117,13 @@ export default {
     },
     
     async loadDocument() {
-      //to get id 
+      /*
+        triggered by clicking on a document in the document page, querying a document id
+        loads content of the desired document into editor using Client API method get and instantiates editor
+
+      */
+
+      // checks the document page exists
       if (this.$route.query && this.$route.query.id) {
         const id = this.$route.query.id
         this.id = id
@@ -127,13 +142,14 @@ export default {
           this.error = err  
       }
 
+      // editor instantiation with extensions
       this.editor = new Editor({
       content:this.content,
-      extensions: [StarterKit,Heading]
+      extensions: [StarterKit,Heading, Link]
     })
 
       }
-      // to make sue you can't use it if you dont load a document
+      // ensures you return to documents page if a document is not loaded 
       else {
         this.$router.push("/documents")
       }
@@ -141,12 +157,15 @@ export default {
     },
 
     async removeDocument() {
+      /*
+        After user clicks delete button and confirms they want to delete, triggers this method
+        If the id is valid, try to remove using Client API method otherwise display that the document id is invalid
+      */
 
-        //Check if valid id
-
+          // Checking if id is valid
           if (this.id !== "") {
-              //try to remove
-
+            
+            // try block attempts to remove
             try {
             console.log(this.id,"This Testing")
             const doc = await DocumentNodeRequests.remove(this.id)
@@ -163,10 +182,12 @@ export default {
 
           }
 
+          // error message 
           else {
             this.error = "Document has invalid id"
           }
     }
+
    },
 
   mounted() {

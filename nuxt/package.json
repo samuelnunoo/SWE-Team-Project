@@ -17,6 +17,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@tiptap/core": "^2.0.0-beta.53",
     "@tiptap/extension-heading": "^2.0.0-beta.11",
+    "@tiptap/extension-link": "^2.0.0-beta.15",
     "@tiptap/starter-kit": "^2.0.0-beta.50",
     "@tiptap/vue-2": "^2.0.0-beta.27",
     "@tiptap/vue-3": "^2.0.0-beta.33",
