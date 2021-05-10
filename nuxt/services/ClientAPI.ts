@@ -30,6 +30,9 @@ export class AuthenticationRequests {
 
     static signup = async (data:any) => {
         return await axios.post(SERVER_URL + '/api/auth/signup',data)
+        .catch(error => {
+            console.log(error)
+        })
     }
 
   
