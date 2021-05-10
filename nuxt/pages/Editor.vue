@@ -164,18 +164,11 @@ export default {
         If the id is valid, try to remove using Client API method otherwise display that the document id is invalid
       */
 
-<<<<<<< HEAD
         //Check if valid id
 
           if (this.id !== "" && this.id !== null) {
               //try to remove
 
-=======
-          // Checking if id is valid
-          if (this.id !== "") {
-            
-            // try block attempts to remove
->>>>>>> 5388f419481dcdcdae54dc3bad979cff974f993b
             try {
             console.log(this.id,"This Testing")
             const doc = await DocumentNodeRequests.remove(this.id)
