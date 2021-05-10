@@ -3,17 +3,19 @@ const  NUM_DEFAULT_NODES = 50
 
 exports.getNodes = (req, res) => {
   const maxItems = parseInt(req.query.max) || NUM_DEFAULT_NODES;
-  db.getNodes(req.body, req.user.id, maxItems)
+  const query = req.query.type ? { type: req.query.type} : {}
+  
+  db.getNodes(query, req.user.id, maxItems)
     .then((nodes) => {
       res.status(200).json(nodes);
     })
     .catch((err) => {
-      console.log(err); //@todo can remove 
       res.status(500).send(err);
     });
 };
 
 exports.getNode = (req, res) => {
+
   db.getNode(req.params.id, req.user.id)
     .then((node) => {
       if (node != null) {
