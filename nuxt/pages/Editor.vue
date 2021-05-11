@@ -79,6 +79,7 @@ export default {
 
   data() {
     return {
+        // default data for document
         title:"New Document",
         dialog:false,
         alert:false,
@@ -190,10 +191,12 @@ export default {
             this.error = "Document has invalid id"
           }
     },
+
+    // creating the default editor 
     test() {
       this.editor = new Editor({
       content:this.content,
-      extensions: [StarterKit,Heading]
+      extensions: [StarterKit,Heading, Link]
     })
     }
 
